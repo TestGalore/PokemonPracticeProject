@@ -1,0 +1,24 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    min-height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pokeContainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.pokeCard{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+}
