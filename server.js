@@ -64,5 +64,13 @@ connection.query("SELECT ID, Name, Type1, Type2 FROM pokemon_data WHERE Type2 IS
     console.log("\nPokemon with Two Types:\n ", results);
 })
 
+// Lists 3 random pokemon and their information
+connection.query("SELECT * FROM pokemon_data ORDER BY RAND() LIMIT 3;", function (err, results, fields) {
+    if (err) {
+        console.error("Failed to select from table: " + err.stack);
+    }
+    console.log("\nThree Random Pokemon:\n ", results);
+})
+
 // Terminating connection
 connection.end();
