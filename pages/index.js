@@ -23,12 +23,36 @@ function createPokeCard(pokeInfo){
     pokeCard = document.createElement("div");
     pokeCard.setAttribute("class", "pokeCard");
     pokeName = document.createElement("h1");
-    pokeName.appendChild(document.createTextNode(pokeInfo.Name));
+    pokeName.appendChild(document.createTextNode("#" + pokeInfo.ID + " " + pokeInfo.Name));
     pokeCard.appendChild(pokeName);
     pokeImg = document.createElement("img");
     pokeImg.setAttribute("src", "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/" + pad(pokeInfo.ID) + ".png");
     pokeCard.appendChild(pokeImg);
+    stats = document.createElement("span");
+    stats.appendChild(document.createTextNode("Type: " + pokeInfo.Type1));
+    pokeCard.append(stats);
+    stats = document.createElement("span");
+    stats.appendChild(document.createTextNode("HP: " + pokeInfo.HP));
+    pokeCard.append(stats);
+    stats = document.createElement("span");
+    stats.appendChild(document.createTextNode("Attack: " + pokeInfo.Attack));
+    pokeCard.append(stats);
+    stats = document.createElement("span");
+    stats.appendChild(document.createTextNode("Defense: " + pokeInfo.Defense));
+    pokeCard.append(stats);
+
     pokeContainer.appendChild(pokeCard);
 }
 
-addPokemon();
+t = 
+{
+    Name : "Bulbo",
+    ID : "1",
+    Type1: "Test",
+    HP: "50",
+    Attack: "80",
+    Defense: "2",
+
+}
+
+createPokeCard(t);
