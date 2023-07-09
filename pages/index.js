@@ -4,13 +4,18 @@ function pad(num) {
 }
 
 async function get3RandomPokemon(){
-    const response = await fetch("127.0.0.1:8080/rand");
+    const response = await fetch("/rand");
     const pokemon = await response.json();
     return pokemon;
 }
 
 async function addPokemon(){
+    pokeContainer = document.getElementById("pokeContainer");
+    while (pokeContainer.lastElementChild) {
+        pokeContainer.removeChild(pokeContainer.lastElementChild);
+    }
     pokemons = await get3RandomPokemon();
+    pokemons.forEach( (pokeInfo) => { createPokeCard(pokeInfo) })
 }
 
 function createPokeCard(pokeInfo){
@@ -26,10 +31,4 @@ function createPokeCard(pokeInfo){
     pokeContainer.appendChild(pokeCard);
 }
 
-bulbo = 
-{
-    ID: 1,
-    Name: "Bulbo",
-}
-
-createPokeCard(bulbo);
+addPokemon();

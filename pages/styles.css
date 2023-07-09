@@ -4,6 +4,8 @@
 
 body{
     min-height: 100vh;
+    flex-direction: column;
+    gap: 50px;
     display:flex;
     align-items: center;
     justify-content: center;

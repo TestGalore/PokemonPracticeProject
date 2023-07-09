@@ -25,7 +25,7 @@ connection.connect(function(err) {
 
 // Define a route handler for the root path
 app.get('/', function (req, res) {
-    res.sendFile("./pages/base.html");
+    res.sendFile(__dirname + "/base.html");
 });
 
 // Lists all legendary Pokemon and their info
