@@ -3,8 +3,14 @@ function pad(num) {
     return s.substring(s.length-3);
 }
 
-async function getRandomPokemon(){
-    const response = await fetch("");
+async function get3RandomPokemon(){
+    const response = await fetch("127.0.0.1:8080/rand");
+    const pokemon = await response.json();
+    return pokemon;
+}
+
+async function addPokemon(){
+    pokemons = await get3RandomPokemon();
 }
 
 function createPokeCard(pokeInfo){
